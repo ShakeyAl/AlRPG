@@ -1,9 +1,6 @@
 package game;
 //import java.sql.*;
-import java.sql.Types;
-
-import org.h2.tools.Csv;
-import org.h2.tools.SimpleResultSet;
+import java.sql.*;
 
 public class GameMain {
 
@@ -11,15 +8,24 @@ public class GameMain {
 		
 		Game game1 = new Game();
 		
-		SimpleResultSet rs = new SimpleResultSet();
-		rs.addColumn("NAME",  Types.VARCHAR, 255, 0);
-		rs.addColumn("EMAIL", Types.VARCHAR, 255, 0);
-		rs.addRow("Bob Meier", "bob.meier@abcde.abc");
-		rs.addRow("John Jones", "john.jones@abcde.abc");
-		new Csv().write("data/test.csv", rs, null);
+		/*
+		Class.forName("org.h2.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:h2:~/charactersheet", "sa", "sa");
+		Statement stat = conn.createStatement();
+		stat.execute("insert into charsheet values(1, 'Duke', 'Warrior', 1, 0, 0, 10, 10, 10, 10, 100, 50, 20, 20, 20)");
+		stat.execute("insert into charsheet values(2, 'Dude', 'Wizard', 1, 0, 0, 10, 10, 10, 10, 100, 50, 20 , 20, 20)");
 		
+		ResultSet rs;
+		rs = stat.executeQuery("select * from charsheet");
+		while(rs.next()) {
+			System.out.println(rs.getString("name"));
+		
+		}
+		
+		stat.close();
+		conn.close();
+		*/
 		game1.start(/* pass database into here */);
-		
 		
 	}
 }
