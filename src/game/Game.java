@@ -1,14 +1,19 @@
 package game;
 import interfacePackage.Menu;
+import charPack.*;
 
 public class Game {
 	int menuOneSelection;
-	public Game(){}
+	Menu mainM;
+	
+	public Game(){
+		mainM = new Menu();
+	}
 	
 	public void start(){
 		Boolean gameOver = false;
 		while(gameOver == false){
-			menuOneSelection = Menu.MainMenu();
+			menuOneSelection = mainM.MainMenu();
 			// if(menuOneSelection == 1) create new character
 			// else if(menuOneSelection == 2) Load already created character
 			// else gameOver = true;

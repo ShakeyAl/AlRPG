@@ -1,6 +1,5 @@
 package game;
 //import java.sql.*;
-import java.sql.*;
 
 public class GameMain {
 
