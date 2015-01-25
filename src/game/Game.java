@@ -1,6 +1,6 @@
 package game;
 import interfacePackage.Menu;
-import charPack.*;
+import charPack.CharacterCreation;
 
 public class Game {
 	int menuOneSelection;
@@ -14,9 +14,9 @@ public class Game {
 		Boolean gameOver = false;
 		while(gameOver == false){
 			menuOneSelection = mainM.MainMenu();
-			// if(menuOneSelection == 1) create new character
-			// else if(menuOneSelection == 2) Load already created character
-			// else gameOver = true;
+			if(menuOneSelection == 1) gameOver = true; //create new character
+			else if(menuOneSelection == 2) gameOver = true ; //Load already created character
+			else gameOver = true;
 			
 			//take loaded character and contine to playing game
 			
