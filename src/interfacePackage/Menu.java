@@ -3,9 +3,10 @@ import java.util.Scanner;
 
 public class Menu {
 	int selection = 0;
+	int loadSelect = 0;
 	public Menu(){}
 	
-	public int MainMenu{
+	public int MainMenu(){
 		/************************/
 		System.out.println("Welcome to Al's RPG");
 		System.out.println();
@@ -18,8 +19,23 @@ public class Menu {
 		
 		Scanner sc = new Scanner(System.in);
 		selection = sc.nextInt();
-	
+		sc.close();
 		return selection;
+	}
+	
+	public int LoadMenu(){
+		
+		/***********************/
+		System.out.println("Please select a character to load");
+		System.out.println();
+		// for loop to print number of characters in DB.  Number : Name : Class : Level
+		// Scanner sc = new Scanner(System.in);
+		// loadSelect = sc.nextInt();
+		// sc.close();
+		// return selection 0 means nothing, and should go back to main menu to start again
+		/***********************/
+		
+		return loadSelect;
 	}
 	
 }

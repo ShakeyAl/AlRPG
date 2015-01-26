@@ -24,7 +24,7 @@ public class GameMain {
 		stat.close();
 		conn.close();
 		*/
-		game1.start(/* pass database into here */);
+		game1.start();
 		
 	}
 }

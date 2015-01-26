@@ -1,6 +1,6 @@
 package game;
 import interfacePackage.Menu;
-import charPack.CharacterCreation;
+//import charPack.CharacterCreation;
 
 public class Game {
 	int menuOneSelection;
@@ -14,13 +14,14 @@ public class Game {
 		Boolean gameOver = false;
 		while(gameOver == false){
 			menuOneSelection = mainM.MainMenu();
-			if(menuOneSelection == 1) gameOver = true; //create new character
-			else if(menuOneSelection == 2) gameOver = true ; //Load already created character
+			if(menuOneSelection == 1) gameOver = true; //create new character and return it's Key in the DB
+			else if(menuOneSelection == 2) gameOver = true ; //Load already created character and return its key in DB
 			else gameOver = true;
 			
-			//take loaded character and contine to playing game
-			
-			gameOver = true; //  this is for testing just so i'm not stuck in an infinite loop
+			if(gameOver != true){
+				// take loaded character and start playing game
+				
+			}
 			
 		}
 	}

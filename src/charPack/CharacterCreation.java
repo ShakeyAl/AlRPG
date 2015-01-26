@@ -17,7 +17,7 @@ public class CharacterCreation {
   }
   public void setName(){
     // Ask what to name character set nameVariable to selection
-    name = "Duke"
+    name = "Duke";
   }
   
   public void confirmChar(){
