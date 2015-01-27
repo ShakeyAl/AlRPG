@@ -1,11 +1,13 @@
 package game;
-//import java.sql.*;
+//import java.sql.*;1
 
 public class GameMain {
 
 	public static void main(String[] args) throws Exception{
-		
+
 		Game game1 = new Game();
+		game1.start();
+		game1.end();
 		
 		/*
 		Class.forName("org.h2.Driver");
@@ -24,7 +26,8 @@ public class GameMain {
 		stat.close();
 		conn.close();
 		*/
-		game1.start();
+
+		
 		
 	}
 }
