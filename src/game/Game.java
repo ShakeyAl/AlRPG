@@ -1,69 +1,71 @@
 package game;
-import interfacePackage.Menu;
-//import charPack.CharacterCreation;
 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.*;
 
-import java.util.Scanner;
-
-public class Game {
+public class Game extends JPanel {
 	
-	Scanner scan1;
-	Menu mainM;
-	boolean playing = true;
-	int mmsel; // main menu selection
-	int ccsel; // character class selection
-	String cnsel; // character name selection
-	int clsel;
+	private static final int WIDTH = 1024;
+	private static final int HEIGHT = 768;
+	private JFrame mFrame;
+	private boolean bool1 = false;
 	
 	public Game(){
-		mainM = new Menu();
-		scan1 = new Scanner(System.in);
-		playing = true;
+
 	}
 	
-	public void start(){
+	public Game(JFrame frame){
+		mFrame = frame;
+		buildMenu(mFrame);
+	}
+	
+	public void buildMenu( JFrame f){
+		JMenuBar bar = new JMenuBar();
+		JMenu optionMenu = new JMenu("Option");
+		JMenuItem item;
 		
-		// while loop for starting the game
-		while(playing == true){
-			// prints the main menu
-			mainM.MainMenu();
-			
-			System.out.print("Please enter your selection:  ");
-			mmsel = scan1.nextInt();
-			
-			if(mmsel == 1){
-				mainM.CharClass();
-				System.out.print("Enter your selection: ");
-				ccsel = scan1.nextInt(); // make sure this is an int
-				System.out.print("Please enter your characters name: ");
-				cnsel = scan1.next(); // make sure this is a string
-				// currentChar = CharacterCreation.createChar( cnsel, ccsel)
-				// this.playGame(currentChar);
+		item = new JMenuItem("Create New Character");
+		item.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+
 			}
-			else if( mmsel == 2 ){
-				mainM.LoadMenu();
-				// print out list of characters from database
-				// System.out.println("Enter your selection: ");
-				// clsel = scan1.nextInt();
-				
-				// currentChar = loadChar( clsel );
-				// this.plaGame(currentChar);
+		});
+		optionMenu.add(item);
+		
+		item = new JMenuItem("Load Character");
+		item.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+		
 			}
-			else playing = false;
-			
-		}
+		});
+		optionMenu.add(item);
+		
+		item = new JMenuItem("Exit");
+		item.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+		
+			}
+		});
+		optionMenu.add(item);
+		
+		bar.add(optionMenu);
+		f.setJMenuBar(bar);
 	}
 	
-	public void end(){
-		System.out.println();
-		System.out.println("Game Over!");
-		scan1.close();
-	}
-	/*
 	
-	public void playGame( currentCharacter ){
+	public static void buildGame(){
+		
+		JFrame frame = new JFrame("Al's RPG");
+		
+		frame.setSize(WIDTH, HEIGHT);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		
+		Game app = new Game(frame);
+		app.buildMenu(frame);
+		frame.setContentPane(app);
 		
 	}
-	
-	*/
 }
