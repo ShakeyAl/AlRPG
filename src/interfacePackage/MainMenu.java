@@ -20,6 +20,8 @@ public class MainMenu extends JPanel {
 		size.width = 600;
 		setPreferredSize(size);
 		
+		
+		
 		JButton newBtn = new JButton("Create New Character");
 		JButton loadBtn = new JButton("Load Character");
 		JButton exitBtn = new JButton("Exit Game");
@@ -34,6 +36,7 @@ public class MainMenu extends JPanel {
 		newBtn.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				System.out.println("What up");
+				showScreen();
 			}
 		});
 		
@@ -81,6 +84,11 @@ public class MainMenu extends JPanel {
 		gc.gridy = 2;
 		add(exitBtn, gc);
 				
+	}
+	
+	public void showScreen(){
+		if(isVisible() == true) setVisible(false);
+		else setVisible(true);
 	}
 	
 }

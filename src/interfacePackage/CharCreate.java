@@ -20,6 +20,7 @@ public class CharCreate extends JPanel {
 		Dimension size = getPreferredSize();
 		size.width = 600;
 		setPreferredSize(size);
+		setVisible(false);
 		
 		JLabel charName = new JLabel("Name of Character: ");
 		JTextField charNameField = new JTextField(10);
@@ -95,6 +96,11 @@ public class CharCreate extends JPanel {
 		add(cnclBtn, gc);
 		
 		
+	}
+	
+	public void showScreen(){
+		if(isVisible() == true) setVisible(false);
+		else setVisible(true);
 	}
 	
 }

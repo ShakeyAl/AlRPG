@@ -9,6 +9,7 @@ public class MenuInt extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private MainMenu mainMenu;
+	private CharCreate charCreation;
 
 	public MenuInt(String title){
 		super(title);
@@ -16,6 +17,7 @@ public class MenuInt extends JFrame {
 		initUI();		
 		
 		Container c = getContentPane();
+		c.add(charCreation);
 		c.add(mainMenu);
 		
 		
@@ -24,6 +26,7 @@ public class MenuInt extends JFrame {
 	public void initUI(){
 	
 		mainMenu = new MainMenu();
+		charCreation = new CharCreate();
 		
 	}	
 }
